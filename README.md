@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Next-Gen Futuristic Student Learning Dashboard
 
-## Getting Started
+A high-fidelity, hardware-accelerated ed-tech prototype engineered using **Next.js App Router (RSC)**, **Supabase BaaS**, and custom **Framer Motion spring physics transitions**. Architected with strict adherence to fluid UX guidelines, sporting zero layout shifts, full responsive tabular timelines, and a dual-theme premium glassmorphism finish.
 
-First, run the development server:
+## ⚡ Tech Stack & Architecture Design Breakdown
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Framework:** Next.js (Strict React Server Components data model execution).
+- **Backend-as-a-Service:** Supabase PostgreSQL secure client schemas.
+- **Animation System:** Framer Motion (Exclusive use of GPU-accelerated hardware layers over layout repaints).
+- **Styling Core:** Tailwind CSS (Custom premium glassmorphism accents utilizing nude pink, pitch, and blush tones).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🛡️ Secure Data Pipeline Split Configuration
+1. **Server Elements Layer (`RSC`):** Connects securely using server clients to download payload arrays during pre-rendering routines.
+2. **Client Elements Bridge:** Handles real-time shared structural layouts (`layoutId` snapping capsules, tab transitions, dynamic modal disclosure loaders, and custom reactive multi-theme synchronizations).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Environment Initialization & Seed Procedures
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Database Schema Injection Rule:** Initialize a public table named `courses` with the following schema setup parameters:
+```sql
+create table public.courses (
+  id uuid default gen_random_uuid() primary key,
+  title text not null,
+  progress integer check (progress >= 0 and progress <= 100),
+  icon_name text not null,
+  created_at timestamp with time zone default timezone('utc'::text, now()) not null
+);
